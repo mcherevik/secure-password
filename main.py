@@ -1,10 +1,7 @@
 from random import *
-digits = '0123456789'
-lowercase_letters = 'abcdefghijklmnopqrstuvwxyz'
-uppercase_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
 punctuation = '!#$%&*+-=?@^_'
 chars = ''
-
 print("Welcome to the generator of the secure passwords!")
 
 
@@ -41,15 +38,18 @@ def validate_answer():
 def chars_setup(chars_available):
     print("Do you want to include numbers? Y / N")
     if validate_answer():
-        chars_available += digits
+        for i in range(48, 58):
+            chars_available += chr(i)
 
     print("Do you want to include lowercase letters? Y / N")
     if validate_answer():
-        chars_available += lowercase_letters
+        for i in range(97, 123):
+            chars_available += chr(i)
 
     print("Do you want to include uppercase letters? Y / N")
     if validate_answer():
-        chars_available += uppercase_letters
+        for i in range(65, 91):
+            chars_available += chr(i)
 
     print("Do you want to include punctuation symbols? Y / N")
     if validate_answer():
